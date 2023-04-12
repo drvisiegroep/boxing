@@ -4,11 +4,11 @@
     justify-content: center;
 }
 .wrapper .combo {
-    font-size: 20rem;
+    max-width: 90vw;
+    font-size: 20em;
+    background-color: #19A7CE;
+    white-space: nowrap;
 }
-
-@keyframes grow-animation {
-    0% { transform: scale(1); }
-    50% {transform: scale(2); }
-    100% {transform: scale(1); }
-  }
+.wrapper .combo.background-alt {
+    background-color: #146C94;
+}

@@ -1,5 +1,5 @@
 const comboNumber = document.querySelector('.combo');
-const comboTimer =  document.querySelector('.combotimer');
+
 const timedMovesets = {
   '1':1500 ,
   '2':2000,
@@ -13,24 +13,18 @@ const timedMovesets = {
 function getRandomMove(input) {
   // https://stackoverflow.com/questions/2532218/pick-random-property-from-a-javascript-object
     const moveSetArray  = Object.keys(input);
-    const randomNumber = Math.random();
-    const inputIndex  = Math.floor(randomNumber * moveSetArray.length);
-
+    const inputIndex  = Math.floor(Math.random() * moveSetArray.length);
     const randomKey    = moveSetArray[inputIndex];
     const randomValue  = input[randomKey];
-
     return [randomKey,randomValue]
 }
 
 function newMove() {
   // Willekeurige move met timer afhankelijk van welke move er gedaan moet worden. 
   const move = getRandomMove(timedMovesets)
-//  comboNumber.style.background = 'red'
   comboNumber.innerText = move[0];
-  comboTimer.innerText = move[1];
+  comboNumber.classList.toggle('background-alt')
   setTimeout(newMove, move[1]);
-
-
 }
 
 //Start
