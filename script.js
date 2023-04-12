@@ -1,6 +1,6 @@
 const comboNumber = document.querySelector('.combo');
 const comboTimer =  document.querySelector('.combotimer');
-const timedMoveSets = {
+const timedMovesets = {
   '1':1500 ,
   '2':2000,
   '3':3000,
@@ -24,7 +24,7 @@ function getRandomMove(input) {
 
 function newMove() {
   // Willekeurige move met timer afhankelijk van welke move er gedaan moet worden. 
-  const move = getRandomMove(timedMoveSets)
+  const move = getRandomMove(timedMovesets)
 //  comboNumber.style.background = 'red'
   comboNumber.innerText = move[0];
   comboTimer.innerText = move[1];
