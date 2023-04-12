@@ -8,6 +8,12 @@ const timedMovesets = {
   '3 hooks':3000,
   '4 hooks':4000,
   '5 hooks':5000,
+  'left hook, right straight': 2000,
+  'right straight, left hook': 2000,
+  'right uppercut':1500,
+  'left uppercut':1500,
+  'body shot':1500,
+  'liver shot':1500,
 }
 
 function getRandomMove(input) {
