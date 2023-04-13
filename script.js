@@ -8,6 +8,7 @@ const timedMovesets = {
   '4':4000,
   '3 hooks':3000,
   '4 hooks':4000,
+  'right straight': 1500,
   //'5 hooks':5000,
   'left hook, right straight': 2000,
   'right straight, left hook': 2000,
