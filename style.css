@@ -6,9 +6,9 @@
 }
 .wrapper .combo {
     max-width: 90vw;
-    font-size: 15em;
+    font-size: clamp(8rem, 10vw, 16rem);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     background-color: #19A7CE;
-    white-space: nowrap;
 }
 .wrapper .combo.background-alt {
     background-color: #146C94;

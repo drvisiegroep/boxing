@@ -10,6 +10,7 @@ const timedMovesets = {
   '4 hooks':4000,
   'right straight': 1500,
   //'5 hooks':5000,
+  'burpee': 4000,
   'left hook, right straight': 2000,
   'right straight, left hook': 2000,
   'right uppercut':1500,
@@ -38,7 +39,10 @@ function newMove() {
 }
 
 //Start
-startcomboBtn.addEventListener('click', newMove)
+startcomboBtn.addEventListener('click', () => {
+  newMove()
+  startcomboBtn.innerText = 'STOP';
+})
 
 
 
