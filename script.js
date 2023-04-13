@@ -37,7 +37,7 @@ function newMove() {
 }
 
 //Start
-startcomboBtn.addEventListener('click', newMove())
+startcomboBtn.addEventListener('click', newMove)
 
 
 
