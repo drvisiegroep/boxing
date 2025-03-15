@@ -10,7 +10,7 @@ const timedMovesets = {
   '4 hooks':4000,
   'right straight': 1500,
   //'5 hooks':5000,
-  'burpee': 4000,
+  'burpee': 4500,
   'left hook, right straight': 2000,
   'right straight, left hook': 2000,
   'right uppercut':1500,
@@ -42,8 +42,59 @@ function newMove() {
 startcomboBtn.addEventListener('click', () => {
   newMove()
   startcomboBtn.innerText = 'STOP';
+  startcomboBtn.classList.toggle('stop')
 })
 
+// Get references to the DOM elements
+const dynamicInput = document.getElementById('dynamicInput');
+const addInputBtn = document.getElementById('addInput');
+const removeInputBtn = document.getElementById('removeInput');
 
+// Set up a counter to keep track of the number of input fields
+let counter = 1;
+
+// Function to add a new input field
+function addInput() {
+  // Create a new input element
+  const newInput = document.createElement('input');
+  newInput.type = 'text';
+  newInput.name = `myInputs[${counter}]`;
+
+  // Add the new input element to the DOM
+  dynamicInput.appendChild(newInput);
+
+
+  const inputs = document.querySelectorAll('[name^="myInputs["]');
+  if (inputs.length === 10) {
+    return;
+  }
+
+
+  // Increment the counter
+  counter++;
+
+}
+
+// Function to remove the last input field
+function removeInput() {
+  // Get all the input elements
+  const inputs = document.querySelectorAll('[name^="myInputs["]');
+
+  // If there is only one input field, don't remove it
+  if (inputs.length === 1) {
+    return;
+  }
+
+  // Get the last input element and remove it from the DOM
+  const lastInput = inputs[inputs.length - 1];
+  dynamicInput.removeChild(lastInput);
+
+  // Decrement the counter
+  counter--;
+}
+
+// Add event listeners to the buttons
+addInputBtn.addEventListener('click', addInput);
+removeInputBtn.addEventListener('click', removeInput);
 
 
